@@ -20,7 +20,7 @@ A simple Python-based AI that detects and describes objects in images using YOLO
 # Detailed Instructions:
 
 Step 1: Install Python (The Foundation)
-Open your browser and go to python.org/downloads.
+Open your browser and go to "https://python.org/downloads".
 
 Click the large yellow button that says "Windows".
 
@@ -33,7 +33,7 @@ Click "Install Now".
 Once finished, click "Disable path length limit" (if the option appears) and then "Close".
 
 Step 2: Install Visual Studio Code (The Editor)
-Go to code.visualstudio.com.
+Go to "https://code.visualstudio.com/"
 
 Click "Download for Windows".
 
@@ -78,7 +78,7 @@ In VS Code, go to the top menu and select Terminal > New Terminal. A black windo
 
 Type exactly this and press Enter:
 
-pip install ultralytics pillow
+"pip install ultralytics pillow"
 
 Wait for the text to stop moving. If you see "Successfully installed," you are ready.
 
