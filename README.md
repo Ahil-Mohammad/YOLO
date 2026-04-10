@@ -78,7 +78,7 @@ Wait until you see the message "Successfully installed."
 * Phase 5: Running & Testing the AI
 Launch the App:
 
-In the left sidebar of VS Code, click your script (e.g., vision_app.py).
+In the left sidebar of VS Code, click your script (main.py).
 
 Click the Play button (▷) in the top-right corner.
 
