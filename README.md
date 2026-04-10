@@ -22,7 +22,7 @@ A simple Python-based AI that detects and describes objects in images using YOLO
 Step 1: Install Python (The Foundation)
 Open your browser and go to "https://python.org/downloads".
 
-Click the large yellow button that says "Windows".
+Click the small yellow text button that says "Windows".
 
 Locate the downloaded .exe file in your Downloads folder and double-click it.
 
