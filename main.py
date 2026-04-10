@@ -4,7 +4,6 @@ from PIL import Image, ImageTk
 from ultralytics import YOLO
 from collections import Counter
 
-# 1. Load a "Medium" model for better accuracy (gets more details right)
 model = YOLO('yolo11m.pt') 
 
 def generate_smart_description(found_objects):
@@ -12,16 +11,13 @@ def generate_smart_description(found_objects):
     if not found_objects:
         return "I've looked closely, but I don't see any familiar objects here."
     
-    # Count occurrences (e.g., {'dog': 2, 'person': 1})
     counts = Counter(found_objects)
     
     parts = []
     for obj, count in counts.items():
-        # Handle plurals simply
         name = f"{count} {obj}{'s' if count > 1 else ''}"
         parts.append(name)
     
-    # Join with commas and "and"
     if len(parts) > 1:
         desc = ", ".join(parts[:-1]) + " and " + parts[-1]
     else:
@@ -33,10 +29,8 @@ def upload_and_detect():
     file_path = filedialog.askopenfilename()
     if not file_path: return
 
-    # Run AI Detection
     results = model(file_path)[0]
     
-    # Create the visual result (Image with boxes)
     res_plotted = results.plot()
     img_rgb = Image.fromarray(res_plotted[:, :, ::-1])
     img_rgb.thumbnail((500, 500))
@@ -45,16 +39,14 @@ def upload_and_detect():
     image_label.config(image=tk_img)
     image_label.image = tk_img
 
-    # Get object names and create the 'Smart' description
     names = results.names
     found = [names[int(c)] for c in results.boxes.cls.tolist()]
     
     final_text = generate_smart_description(found)
     result_text.set(final_text)
 
-# --- Simple Tkinter UI ---
 root = tk.Tk()
-root.title("Advanced AI Vision")
+root.title("AI Vision")
 root.geometry("600x750")
 root.configure(bg="#f0f0f0")
 
@@ -71,5 +63,4 @@ result_text = tk.StringVar(value="Upload an image to begin...")
 desc_label = tk.Label(root, textvariable=result_text, font=("Arial", 13, "italic"), 
                       wraplength=500, bg="#f0f0f0", fg="#333")
 desc_label.pack(pady=20)
-
 root.mainloop()
