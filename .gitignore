@@ -1,0 +1,27 @@
+# --- AI Models ---
+# We don't upload these because they are huge (100MB+). 
+# Your code will download them automatically for the user.
+*.pt
+*.onnx
+*.engine
+
+# --- Python Junk ---
+# These are temporary files Python makes to run faster.
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environments ---
+# If you ever use a 'venv', this stops it from being uploaded.
+venv/
+env/
+.env/
+
+# --- Operating System Files ---
+# Hidden files your computer makes (like folder icons).
+.DS_Store
+Thumbs.db
+
+# --- YOLO Output ---
+# If you run training or high-speed testing, ignore the results folder.
+runs/
